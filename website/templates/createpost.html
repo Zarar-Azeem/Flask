@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% block content%}
+
+<div>
+    <h1 class="mb-3 mt-3 text-center">Create Page</h1>
+    <form action="/create-post" method="POST">
+        <div class="mb-3">
+            <label for="title" class="form-label">Enter Title</label>
+            <input type="text" name="title" class="form-control" placeholder="Title">
+        </div>
+        <div class="mb-3">
+            <label for="text" class="form-label">Enter post's text</label>
+            <textarea type="text" name="text" rows="10" class="form-control" placeholder="Enter your thoughts"></textarea>
+        </div>
+        <input class="btn btn-primary" type="submit" value="Post">
+    </form>
+</div>
+
+{% endblock %}

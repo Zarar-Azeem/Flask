@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% block content%}
+
+<div>
+    <h1 class="mb-3 mt-3 text-center" >Home Page of {{user.username}}</h1>
+    {%for post in posts%}
+    <div class="card mb-3">
+        <div class="card-body">
+            <h6>Title: {{post.title}}</h2>
+            <p>{{post.text}}</p>
+            {% if post.author == user.id %}
+                <a href="/delete-post/{{post.id}}" class="btn btn-sm btn-danger">Delete</a>
+            {% endif %}
+        </div>
+    </div>
+    {%endfor%}
+</div>
+
+{% endblock %}
